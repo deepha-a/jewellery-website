@@ -21,23 +21,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="h-full">
-        <div className="gd-app-root">
-          <Sidebar />
-          <div className="gd-content-area">
-            <TopBar />
-            <main className="gd-main">{children}</main>
-          </div>
-        </div>
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
