@@ -1,4 +1,6 @@
-﻿export default function WishlistPage() {
+﻿
+
+export default function WishlistPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-zinc-50 p-8 font-sans dark:bg-black">
       <main className="max-w-2xl text-center">
