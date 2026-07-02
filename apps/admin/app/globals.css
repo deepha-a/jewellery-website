@@ -51,7 +51,10 @@ body {
   flex-direction: column;
   
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
 }
 
 .gd-sidebar-header {
