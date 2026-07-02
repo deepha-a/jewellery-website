@@ -172,6 +172,33 @@ export default function ReviewsPage() {
   };
 
   const handleExportTrigger = () => {
+    const csvRows = [
+      ['Product', 'Customer', 'Rating', 'Review', 'Date', 'Status'],
+      ...filteredReviews.map((review) => [
+        review.product,
+        review.customer,
+        review.rating,
+        review.review,
+        review.date,
+        review.status,
+      ]),
+    ].map((row) =>
+      row
+        .map((value) => `"${String(value).replace(/"/g, '""')}"`)
+        .join(',')
+    );
+
+    const csvContent = `${csvRows.join('\n')}\n`;
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `reviews-export-${new Date().toISOString().slice(0, 10)}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+
     setIsExportOpen(true);
   };
 

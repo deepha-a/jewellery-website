@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect } from 'react';
 import {
@@ -192,6 +192,34 @@ export default function InventoryPage() {
   };
 
   const handleExportTrigger = () => {
+    const csvRows = [
+      ['Product', 'SKU', 'Category', 'Stock', 'Reserved', 'Available', 'Status'],
+      ...filteredItems.map((item) => [
+        item.product,
+        item.sku,
+        item.category,
+        item.stock,
+        item.reserved,
+        item.available,
+        item.status,
+      ]),
+    ].map((row) =>
+      row
+        .map((value) => `"${String(value).replace(/"/g, '""')}"`)
+        .join(',')
+    );
+
+    const csvContent = `${csvRows.join('\n')}\n`;
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `inventory-export-${new Date().toISOString().slice(0, 10)}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+
     setIsExportOpen(true);
   };
 
