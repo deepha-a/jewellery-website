@@ -63,7 +63,7 @@ export default function footer() {
       <div className="max-w-7xl mx-auto pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4">
         <p>© 2026 GlowDrape.</p>
         <div className="flex space-x-6">
-          <Link href="#" className="hover:text-white transition">Privacy Policy</Link>
+          <Link href="/policies" className="hover:text-white transition">Privacy Policy</Link>
           <Link href="#" className="hover:text-white transition">Terms & Conditions</Link>
           <Link href="/contact" className="hover:text-white transition">Contact Us</Link>
         </div>

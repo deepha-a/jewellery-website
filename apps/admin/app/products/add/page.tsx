@@ -2,19 +2,10 @@ export default function AddProductPage() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Sidebar Space */}
-      <div className="fixed left-0 top-0 w-[250px] h-screen bg-white border-r shadow-sm">
-        <div className="p-6">
-          <h2 className="text-xl font-bold text-gray-500">
-            Sidebar Area
-          </h2>
-          <p className="text-sm text-gray-500 mt-2">
-            Sidebar will be added by teammate
-          </p>
-        </div>
-      </div>
+      
 
       {/* Main Content */}
-      <div className="ml-[250px] p-8">
+      <div className="flex-1 p-8 overflow-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <div>

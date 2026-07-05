@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Sidebar from '@/components/Sidebar'; 
 import Navbar from '@/components/navbar';
 import Footer from '@/components/Footer'; 
 import { Search, MapPin, Truck, Star, ArrowRight, RotateCcw, AlertTriangle, ExternalLink } from 'lucide-react';
@@ -95,14 +94,10 @@ export default function OrdersPage() {
     <div className="min-h-screen flex flex-col bg-gray-50 font-sans text-[#2A3B50]">
       <Navbar />
 
-      <main className="flex-grow py-10 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8">
-          
-          {/* Sidebar Section */}
-          <Sidebar />
-
+      <main className="grow py-10 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto w-full">
           {/* Orders Content Area */}
-          <div className="flex-grow w-full">
+          <div className="w-full">
             {/* Breadcrumbs */}
             <div className="text-xs text-gray-500 mb-8 font-medium flex gap-2 items-center">
               <span>My Account</span>
@@ -164,7 +159,7 @@ export default function OrdersPage() {
                     />
                   </div>
 
-                  <div className="flex-grow flex flex-col justify-between">
+                  <div className="grow flex flex-col justify-between">
                     <div className="flex justify-between items-start md:items-center mb-2 flex-wrap gap-2">
                       <div className="flex flex-wrap items-center gap-3">
                         <span className="text-[11px] font-bold text-gray-400 tracking-wide uppercase">

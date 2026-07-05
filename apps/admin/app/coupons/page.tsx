@@ -1,4 +1,5 @@
-﻿export default function CouponsPage() {
+﻿import Link from "next/link";
+export default function CouponsPage() {
   const coupons = [
     {
       code: "WELCOME10",
@@ -43,22 +44,11 @@
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100">
+  <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <div className="fixed left-0 top-0 w-[250px] h-screen bg-white border-r shadow-sm">
-        <div className="p-6">
-          <h2 className="text-xl font-bold text-black">
-            Sidebar Area
-          </h2>
-
-          <p className="text-sm text-gray-700 mt-2">
-            Sidebar will be added by teammate
-          </p>
-        </div>
-      </div>
 
       {/* Main Content */}
-      <div className="ml-[250px] p-8 text-black font-medium">
+      <div className="flex-1 p-8 text-black font-medium overflow-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <div>
@@ -75,9 +65,12 @@
             </p>
           </div>
 
-          <button className="bg-blue-700 hover:bg-blue-800 text-white px-5 py-3 rounded-lg font-semibold">
+          <Link
+            href="/coupons/create"
+            className="bg-blue-700 hover:bg-blue-800 text-white px-5 py-3 rounded-lg font-semibold inline-flex items-center justify-center"
+          >
             + Create Coupon
-          </button>
+          </Link>
         </div>
 
         {/* Stats Cards */}

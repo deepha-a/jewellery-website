@@ -1,4 +1,5 @@
-﻿export default function ProductsPage() {
+﻿import Link from "next/link";
+export default function ProductsPage() {
   const products = [
   {
     name: "Diamond Ring",
@@ -100,19 +101,10 @@
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Sidebar Placeholder */}
-      <div className="fixed left-0 top-0 w-[250px] h-screen border-r bg-white">
-        <div className="p-6">
-          <h2 className="text-lg font-bold text-gray-400">
-            Sidebar Area
-          </h2>
-          <p className="text-sm text-gray-400 mt-2">
-            Your teammate will add the sidebar here.
-          </p>
-        </div>
-      </div>
+      
 
       {/* Main Content */}
-      <div className="ml-[250px] p-8 text-black">
+      <div className="flex-1 p-8 text-black overflow-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
@@ -122,9 +114,12 @@
             </p>
           </div>
 
-          <button className="bg-blue-700 hover:bg-blue-800 text-white px-5 py-3 rounded-lg font-medium">
-            + Add Product
-          </button>
+         <Link
+          href="/products/add"
+          className="bg-blue-700 hover:bg-blue-800 text-white px-5 py-3 rounded-lg font-medium"
+         >
+          + Add Product
+         </Link>
         </div>
 
         {/* Filters */}
